@@ -41,24 +41,24 @@ bookRouter.get('/',async(req,res)=>{
     }
 })
 
-bookRouter.patch("/update",auth,async(req,res)=>{
-    const {id} = req.params
+bookRouter.patch("/update/:id", auth, async (req, res) => {
+    const { id } = req.params;
     try {
-        const updateBook = await bookModel.findByIdAndUpdate(id,req.body)
-        res.status(200).send("Book Updated Successfully")
+        const updateBook = await bookModel.findByIdAndUpdate(id, req.body);
+        res.status(200).send("Book Updated Successfully");
     } catch (error) {
-        res.status(500).send("Error while updating the book")
+        res.status(500).send("Error while updating the book");
     }
-})
+});
 
-bookRouter.delete("/update",auth,async(req,res)=>{
-    const {id} = req.params
+bookRouter.delete("/delete/:id", auth, async (req, res) => {
+    const { id } = req.params;
     try {
-        const deleteBook = await bookModel.findByIdAndDelete(id,req.body)
-        res.status(200).send("Book Deleted Successfully")
+        const deleteBook = await bookModel.findByIdAndDelete(id);
+        res.status(200).send("Book Deleted Successfully");
     } catch (error) {
-        res.status(500).send("Error while deleting the book")
+        res.status(500).send("Error while deleting the book");
     }
-})
+});
 
 module.exports = bookRouter
