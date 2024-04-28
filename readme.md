@@ -19,8 +19,8 @@
 
 
 # how to install:
-    * clone reposetory
-    * npm i express mongoose nodemon bcrypt jsonwebtoken dot env
+    * clone repo
+    * npm i express mongoose nodemon bcrypt jsonwebtoken dotenv
 
 # run backend:
     * npm run start
